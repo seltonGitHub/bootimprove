@@ -1,30 +1,22 @@
 package com.boot.bootprove.entity;
 
+import lombok.Data;
+
+import javax.persistence.*;
+
+@Data
+@Entity
+@Table(name = "user")
 public class User {
 
+    @Id
+    @GeneratedValue
     private Integer id;
+
+    @Column(length = 50)
     private String name;
 
-    public User() {
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public User(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
         this.name = name;
     }
 }

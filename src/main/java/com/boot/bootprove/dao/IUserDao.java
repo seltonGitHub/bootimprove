@@ -1,10 +1,11 @@
 package com.boot.bootprove.dao;
 
 import com.boot.bootprove.entity.User;
-import org.apache.ibatis.annotations.Insert;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface IUserDao {
+import java.util.List;
 
-    @Insert("insert into user values(null, #{name})")
-    int addUser(User user);
+public interface IUserDao extends JpaRepository<User, Integer> {
+
+    List<User> findByName(String name);
 }
